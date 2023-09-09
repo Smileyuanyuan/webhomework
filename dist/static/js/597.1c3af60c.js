@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[597],{5597:function(t,e,u){u.r(e),u.d(e,{default:function(){return f}});var r=function(){var t=this,e=t._self._c;return e("div",{attrs:{id:"sticker"}},[t._v(" this is sticker page ")])},s=[],n={data(){return{}},methods:{}},i=n,a=u(1001),c=(0,a.Z)(i,r,s,!1,null,"6df1161a",null),f=c.exports}}]);
