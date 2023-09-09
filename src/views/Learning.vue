@@ -1,15 +1,17 @@
 <template>
-  <div id="life">
-    <span class="backfont">Welcome to my life page.</span>
+  <div id="learning">
     <div class="board">
       <div class="left">
-        <!-- <Personal v-if="isPer"></Personal> -->
         <router-view></router-view>
       </div>
       <div class="right">
         <div class="r-top">
-           <el-avatar class="avatar" :size="150" :src="require('../assets/m2.png')"></el-avatar>
-           <span style="color: #fed8e1;">Welcome to my life page.</span>
+          <el-avatar
+            class="avatar"
+            :size="150"
+            :src="require('../assets/m2.png')"
+          ></el-avatar>
+          <span style="color: #fed8e1">Welcome to my life page.</span>
         </div>
         <el-menu
           default-active="personal"
@@ -19,19 +21,19 @@
           active-text-color="#f598aa"
           @select="changeSider"
         >
-          <el-menu-item index="personal" >
-              <i class="el-icon-user-solid"></i>
-              <span>个人</span>
+          <el-menu-item index="">
+            <i class="el-icon-user-solid"></i>
+            <span>个人</span>
           </el-menu-item>
-          <el-menu-item index="hometown" >
+          <el-menu-item index="hometown">
             <i class="el-icon-s-home"></i>
             <span slot="title">家乡</span>
           </el-menu-item>
-          <el-menu-item index="hoby" >
+          <el-menu-item index="hoby">
             <i class="el-icon-sugar"></i>
             <span slot="title">兴趣</span>
           </el-menu-item>
-          <el-menu-item index="music" >
+          <el-menu-item index="music">
             <i class="el-icon-mic"></i>
             <span slot="title">音乐盒</span>
           </el-menu-item>
@@ -46,74 +48,52 @@
 </template>
 
 <script>
-import Personal from '@/components/Personal'
+import Personal from "@/components/Personal";
 
 export default {
   components: {
-    Personal
+    Personal,
   },
   data() {
-    return {
-      isPer: true,
-      avatar: {
-        url: "../assets/m1.jpg",
-      },
-    };
+    return {};
   },
   methods: {
-    toPerson() {
-      this.$router.push({path: '/life/personal'})
-    },
     changeSider(path) {
-      this.$router.push(path)
-    }
-  }
+        console.log(this.path)
+    },
+  },
 };
 </script>
 
 <style scoped>
 #life {
   border: 1px solid #fed8e1;
+  width: 100%;
+  height: 100%;
   background-color: rgb(238, 223, 226, 0.9);
   opacity: 1;
-  width: 100%;
-  z-index: -1;
-  overflow: auto;
-  display: flex;
 }
-.backfont{
-  /*border: 1px solid red;*/
-  position: absolute;
-  top: 100px;
-  left: 40px;
-  color: #f598aa;
-  font-size: 60px;
-  opacity: 0.3;
-  transform: rotate(-10deg);
-  cursor: default;
-}
-.per{
+.per {
   /*border: 1px solid red;*/
 }
 
 .board {
   margin-left: 15%;
   margin-top: 10%;
-  width: 70%;  
-  height: 100vh;
+  width: 70%;
   background-color: #fed8e1;
   opacity: 1;
   display: flex;
-  flex-direction: row;
 }
 
-.left{
+.left {
   /*border: 1px solid red;*/
   width: 80%;
 }
 
 .right {
   /*border: 1px solid green;*/
+  position: relative;
   width: 20%;
 }
 
@@ -122,31 +102,30 @@ export default {
   position: relative;
   margin-top: -70px;
 }
-.r-top{
+.r-top {
   background-color: white;
   height: 150px;
   background-color: #f598aa;
 }
 
-.el-menu{
+.el-menu {
   /*border: 1px solid red;*/
-  height: 60vh;
 }
 
-.el-menu-item{
- /* border: 1px solid green;*/
+.el-menu-item {
+  /* border: 1px solid green;*/
   height: 60px;
   text-align: left;
-  font-size: 18px!important;
+  font-size: 18px !important;
 }
 
-.el-menu-item:hover,.el-nue-item:focus{
+.el-menu-item:hover,
+.el-nue-item:focus {
   background-color: #fed8e1;
 }
-.el-menu-item.is-active{
-  background-color: #fed8e1!important;
+.el-menu-item.is-active {
+  background-color: #fed8e1 !important;
 }
-
 
 .avatar {
   cursor: pointer;
