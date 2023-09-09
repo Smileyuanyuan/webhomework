@@ -1,1 +1,0 @@
-"use strict";(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[80],{1080:function(e,t,u){u.r(t),u.d(t,{default:function(){return l}});var n=function(){var e=this,t=e._self._c;return t("div",{attrs:{id:"hoby"}},[e._v(" this is boby page ")])},r=[],s={data(){return{}},methods:{}},a=s,i=u(1001),f=(0,i.Z)(a,n,r,!1,null,"aef7164e",null),l=f.exports}}]);

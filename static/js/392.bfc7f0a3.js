@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkvue"]=self["webpackChunkvue"]||[]).push([[392],{8392:function(u,e,t){t.r(e),t.d(e,{default:function(){return l}});var s=function(){var u=this,e=u._self._c;return e("div",{attrs:{id:"music"}},[u._v(" this is music page ")])},n=[],r={data(){return{}},methods:{}},i=r,a=t(1001),c=(0,a.Z)(i,s,n,!1,null,"56e70abc",null),l=c.exports}}]);
