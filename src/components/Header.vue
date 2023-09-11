@@ -1,12 +1,12 @@
 <template>
 <div class="header">
     <div class="left">
-        <span class="icon iconfont icon-backHome" @click="toLearning()"></span>
+        <span class="icon iconfont icon-backHome" @click="toLearning()"> </span>
     </div>
     <div class="right">
-        <span class="el-icon-search"></span>
-        <span class="icon iconfont icon-willing"></span>
-        <span class="icon iconfont icon-l079aiqing"></span>
+        <span class="el-icon-search"> </span>
+        <span class="icon iconfont icon-willing"> </span>
+        <span class="icon iconfont icon-l079aiqing"> </span>
     </div>
     
 </div>
@@ -34,10 +34,13 @@ export default {
     height: 30px;
     padding: 15px;
     display: flex;
+    position: fixed;
+    z-index: 99;
 }
 
 .left span{
     font-size: 30px;
+    position: relative;
     color: #f598aa;
 }
 
@@ -52,5 +55,8 @@ export default {
     font-size: 30px;
     padding-right: 15px;
 }
+ span:hover{
+    animation: heartBeat 3s;
 
+}
 </style>

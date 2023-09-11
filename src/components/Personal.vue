@@ -34,10 +34,9 @@
     <div style="height: 30px;"></div>
     <span class="font1">相 册</span>
     <hr>
-    <!-- <div class="photo">
-        <img :src="require('../assets/m2.png')">
+    <div class="photo">
         <img src="../assets/m2.png">
-    </div>  -->
+    </div> 
 </div>
 </template>
 
@@ -52,10 +51,21 @@ methods: {},
 </script>
 
 <style scoped>
+:root{
+    --animation-delay: 3s;
+}
+
 #personal{
    /* border: 1px solid black;*/
     text-align: left;
     padding: 20px;
+    background-color: #ffdce5;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 3px 0px #a3a3a3;
+
+    animation: backInUp duration timing-function delay iteration-count direction fill-mode;
 }
 
 .font1{
@@ -68,6 +78,14 @@ methods: {},
     position: relative;
     margin-left: 150px;
 }
+
+.det1{
+    /*background-color: #FFEBF0;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 6px 0px  #f598aa;*/
+    margin-top: 20px;
+}
 .el-divider{
     color: #ff7e98!important;
 }
@@ -78,12 +96,24 @@ methods: {},
 }
 
 img {
-    background-color: #f598aa;
-    border: 1px solid #ff7e98;
     border-radius: 10px;
-    width: 100px!important;
-    padding: 10px;
+    width: 150px!important;
+    margin: 10px;
     display: flex;
+     display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+img:hover{
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 hr {
@@ -99,6 +129,9 @@ span{
     display: inline-block;
     width: 240px;
     font-size: 18px;
+}
+i:hover{ 
+    transform: scale(1.5);
 }
 
 </style>

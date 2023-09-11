@@ -4,15 +4,18 @@
     <div class="board">
       <div class="left">
         <!-- <Personal v-if="isPer"></Personal> -->
-        <router-view></router-view>
+        <transition enter-active-class="animate__animated animate__backInUp">  
+          <router-view></router-view>
+        </transition>
+        
       </div>
       <div class="right">
         <div class="r-top">
            <el-avatar class="avatar" :size="150" :src="require('../assets/m2.png')"></el-avatar>
-           <span style="color: #fed8e1;">Welcome to my life page.</span>
+           <span class="note">Welcome to my life page.</span>
         </div>
         <el-menu
-          default-active="personal"
+          :default-active="page"
           class="el-menu"
           text-color="#fed8e1"
           background-color="#f598aa"
@@ -54,6 +57,7 @@ export default {
   },
   data() {
     return {
+      page: 'personal',
       isPer: true,
       avatar: {
         url: "../assets/m1.jpg",
@@ -65,46 +69,50 @@ export default {
       this.$router.push({path: '/life/personal'})
     },
     changeSider(path) {
-      this.$router.push(path)
+        this.$router.push(path)
     }
+  },
+  created() {
+    this.changeSider(this.page)
   }
 };
 </script>
 
 <style scoped>
 #life {
-  border: 1px solid #fed8e1;
-  background-color: rgb(238, 223, 226, 0.9);
-  opacity: 1;
+  border: 1px solid #ffc8d5;
+  background-color: rgb(238, 223, 226, 0.7);
+  background-repeat: no-repeat; 
+  background-size: 100% 100%;
   width: 100%;
   z-index: -1;
   overflow: auto;
-  display: flex;
 }
 .backfont{
   /*border: 1px solid red;*/
   position: absolute;
-  top: 100px;
-  left: 40px;
+  top: 150px;
+  left: 60px;
   color: #f598aa;
   font-size: 60px;
-  opacity: 0.3;
-  transform: rotate(-10deg);
+  opacity: 0.6;
   cursor: default;
+
+  animation: heartBeat 5s;
+
 }
+
 .per{
   /*border: 1px solid red;*/
 }
 
 .board {
   margin-left: 15%;
-  margin-top: 10%;
+  margin-top: 20%;
   width: 70%;  
-  height: 100vh;
-  background-color: #fed8e1;
+  /*background-color: #fed8e1;*/
   opacity: 1;
   display: flex;
-  flex-direction: row;
 }
 
 .left{
@@ -117,25 +125,20 @@ export default {
   width: 20%;
 }
 
-.el-avatar {
-  /*border:1px #000000 solid;*/
-  position: relative;
-  margin-top: -70px;
-}
 .r-top{
-  background-color: white;
-  height: 150px;
   background-color: #f598aa;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .el-menu{
   /*border: 1px solid red;*/
-  height: 60vh;
+  height: 350px;
+  border-radius: 20px!important;
 }
 
 .el-menu-item{
  /* border: 1px solid green;*/
-  height: 60px;
   text-align: left;
   font-size: 18px!important;
 }
@@ -148,10 +151,22 @@ export default {
 }
 
 
-.avatar {
+.el-avatar {
+  /*border: 1px solid red;*/
   cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border-radius: 100px;
+  position: relative;
+  top: -60px;
+  object-fit: cover;
+}
+
+.el-avatar:hover{
+  animation: flash 1s;
+}
+
+.note{
+  cursor: pointer;
+  position: relative;
+  top: -60px;
+  color: #fed8e1;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
 <div id="sticker">
     this is sticker page
+     <p>这个模块还未设计哦</p>
 </div>
 </template>
 

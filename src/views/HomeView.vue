@@ -45,6 +45,8 @@ export default {
   background-color: rgba(255, 235, 240, 1);
   position: relative;
   top: 200px;
+
+  animation: wobble 1s;
 }
 
 .el-button:hover {
@@ -63,11 +65,15 @@ export default {
   font-weight: bolder;
   text-align: center;
   color: rgba(245, 152, 170, 1);
+
+  animation: rubberBand 2s;
 }
 .t2 {
   position: relative;
   top: 180px;
   font-size: xxx-large;
   font-weight: bold;
+
+  animation: rubberBand 2s;
 }
 </style>

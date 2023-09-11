@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta:{ ShowNav: true }
   },
   {
     path: '/life',

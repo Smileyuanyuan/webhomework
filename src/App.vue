@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <Header class="header"></Header>
+    <Header class="header" v-if="!$route.meta.ShowNav"></Header>
     <keep-alive>
       <router-view>
 
       </router-view>
     </keep-alive>
-    <Footer></Footer>
+    <Footer v-if="!$route.meta.ShowNav"></Footer>
   </div>
 </template>
 
